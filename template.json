@@ -1,0 +1,9 @@
+﻿{
+    "id":  "portfolio-creative-grid",
+    "name":  "Portfolio Creative Grid",
+    "category":  "portfolio",
+    "version":  "1.0.0",
+    "license":  "MIT",
+    "description":  "For studios and creators with project grid and detail pages.",
+    "createdAt":  "2026-03-30T22:38:58+08:00"
+}
