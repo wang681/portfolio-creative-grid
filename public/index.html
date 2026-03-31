@@ -3,138 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Creative Grid - Preview</title>
+    <title>Portfolio Creative Grid Preview</title>
     <style>
-      :root {
-        --accent: #4338ca;
-        --text: #0f172a;
-        --muted: #475569;
-        --bg: #f8fafc;
-        --card: #ffffff;
-        --line: #e2e8f0;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
-        color: var(--text);
-        background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
-      }
-      .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-      .nav {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 18px 0;
-      }
-      .brand { font-size: 20px; font-weight: 700; color: var(--text); }
-      .menu { display: flex; gap: 16px; color: var(--muted); font-size: 14px; }
-      .hero {
-        margin-top: 20px;
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 42px;
-        box-shadow: 0 16px 50px rgba(15, 23, 42, 0.08);
-      }
-      h1 { margin: 0; font-size: 44px; line-height: 1.1; }
-      .sub { margin: 16px 0 24px; color: var(--muted); font-size: 20px; line-height: 1.5; max-width: 760px; }
-      .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
-      .btn {
-        border: none; border-radius: 10px; padding: 11px 16px; font-weight: 600;
-        cursor: pointer; text-decoration: none; display: inline-block;
-      }
-      .btn-primary { background: var(--accent); color: white; }
-      .btn-secondary { background: #eef2ff; color: #1e293b; }
-      .grid {
-        margin-top: 20px;
-        display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 18px;
-      }
-      .card h3 { margin: 0 0 8px; font-size: 18px; }
-      .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
-      .section { margin-top: 20px; }
-      .section h2 { margin: 0 0 10px; font-size: 24px; }
-      .section p { margin: 0; color: var(--muted); line-height: 1.7; }
-      .feature-list { margin-top: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-      .feature {
-        background: #f8fafc;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 14px;
-      }
-      .footer {
-        margin: 26px 0 36px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 13px;
-      }
-      @media (max-width: 900px) {
-        h1 { font-size: 34px; }
-        .grid { grid-template-columns: 1fr; }
-        .feature-list { grid-template-columns: 1fr; }
-        .hero { padding: 24px; }
-      }
+      :root { --bg:#f6f8ff; --ink:#121737; --accent:#4338ca; --line:#dce2ff; --muted:#4d557f; }
+      *{box-sizing:border-box;}
+      body{margin:0;font-family:"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);}
+      .wrap{max-width:1160px;margin:0 auto;padding:20px 20px 42px;}
+      .head{display:flex;justify-content:space-between;align-items:center;}
+      .brand{font-weight:800;font-size:22px;}
+      .chips{display:flex;gap:8px;flex-wrap:wrap;}
+      .chip{padding:6px 10px;border-radius:999px;background:#e9ecff;color:#363fb5;font-size:12px;font-weight:700;}
+      .hero{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;}
+      h1{margin:0;font-size:40px;}
+      .lead{margin-top:12px;font-size:19px;color:var(--muted);line-height:1.6;}
+      .grid{margin-top:14px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;}
+      .item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;min-height:140px;position:relative;overflow:hidden;}
+      .item:before{content:"";position:absolute;inset:auto -50px -50px auto;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle, rgba(67,56,202,.14), rgba(67,56,202,0));}
+      .item h3{margin:0;font-size:18px;}
+      .item p{margin:8px 0 0;color:var(--muted);line-height:1.6;font-size:14px;}
+      .wide{grid-column:span 2;min-height:170px;}
+      .meta{margin-top:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+      .m{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;}
+      .m b{display:block;font-size:22px;}
+      @media (max-width:980px){ .grid{grid-template-columns:1fr;} .wide{grid-column:span 1;} .meta{grid-template-columns:1fr;} h1{font-size:33px;} }
     </style>
   </head>
   <body>
     <div class="wrap">
-      <header class="nav">
+      <header class="head">
         <div class="brand">Portfolio Creative Grid</div>
-        <nav class="menu">
-          <span>Home</span>
-          <span>Features</span>
-          <span>Cases</span>
-          <span>Contact</span>
-        </nav>
+        <div class="chips"><span class="chip">Branding</span><span class="chip">Web</span><span class="chip">Motion</span><span class="chip">3D</span></div>
       </header>
 
-      <main class="hero">
-        <h1>Portfolio Creative Grid</h1>
-        <p class="sub">A visual portfolio template for studios, agencies and creators.</p>
-        <div class="cta-row">
-          <a href="#" class="btn btn-primary">Start With This Template</a>
-          <a href="#" class="btn btn-secondary">View Documentation</a>
-        </div>
-      </main>
-
-      <section class="grid section">
-        <article class="card">
-          <h3>Ready-to-Deploy Structure</h3>
-          <p>Comes with homepage sections, content blocks and a clean information hierarchy.</p>
-        </article>
-        <article class="card">
-          <h3>Cloudflare Friendly</h3>
-          <p>Designed to work with Pages, Workers, D1 and KV workflow in your platform strategy.</p>
-        </article>
-        <article class="card">
-          <h3>Commercial Reuse</h3>
-          <p>Template metadata and versioning are prepared for production deployment and updates.</p>
-        </article>
+      <section class="hero">
+        <h1>Showcase projects with a strong visual hierarchy.</h1>
+        <p class="lead">This template is optimized for agencies and creators: project-first layout, case highlights, and trust markers for inbound opportunities.</p>
       </section>
 
-      <section class="section card">
-        <h2>What You Can Customize</h2>
-        <p>Swap brand assets, update copy, connect forms, and map routes to your deployment pipeline.</p>
-        <div class="feature-list">
-          <div class="feature">Hero messaging and value proposition</div>
-          <div class="feature">Feature modules and media blocks</div>
-          <div class="feature">Case study and trust sections</div>
-          <div class="feature">Contact CTA and conversion area</div>
-        </div>
+      <section class="grid">
+        <article class="item wide"><h3>Rebrand System for Fintech Suite</h3><p>Visual identity refresh with modular UI kit and launch narrative assets.</p></article>
+        <article class="item"><h3>Retail Campaign</h3><p>Seasonal campaign page and social motion pack.</p></article>
+        <article class="item"><h3>Product Video</h3><p>Explainer storyboard, voice script and ad cutdowns.</p></article>
+        <article class="item"><h3>Design Ops</h3><p>Tokenized design system with component governance.</p></article>
+        <article class="item wide"><h3>Enterprise Website Redesign</h3><p>Information architecture, prototype validation and production rollout.</p></article>
       </section>
 
-      <section class="section card">
-        <h2>Deployment Notes</h2>
-        <p>This preview demonstrates the visual template shell. Content and routes are applied by your deployment APIs in user accounts.</p>
+      <section class="meta">
+        <div class="m"><b>64</b>Published projects</div>
+        <div class="m"><b>18</b>Long-term clients</div>
+        <div class="m"><b>4.9/5</b>Avg review score</div>
       </section>
-
-      <footer class="footer">
-        Template preview generated for Mirror-X Template Factory
-      </footer>
     </div>
   </body>
 </html>
